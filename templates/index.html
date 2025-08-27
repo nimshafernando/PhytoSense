@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Medicinal Leaf Classifier with 3D Molecular Visualization</title>
+    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .upload-section {
+            padding: 40px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .upload-box {
+            border: 3px dashed #3498db;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            background: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-box:hover {
+            border-color: #2980b9;
+            background: #ecf0f1;
+        }
+
+        .upload-box.dragover {
+            border-color: #27ae60;
+            background: #d5f4e6;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .predict-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            display: none;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            padding: 40px;
+        }
+
+        .prediction-result {
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4f1d4 100%);
+            border-left: 5px solid #27ae60;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .model-confidence {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .confidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .confidence-table th, .confidence-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .confidence-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .compounds-section {
+            margin-top: 30px;
+        }
+
+        .compound-card {
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .compound-header {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .compound-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .structure-2d {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .structure-3d {
+            flex: 1;
+            min-width: 400px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .structure-title {
+            color: #495057;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .viewer-container {
+            width: 100%;
+            height: 350px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .control-btn {
+            margin: 3px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .btn-stick { background: #007bff; }
+        .btn-ball { background: #28a745; }
+        .btn-sphere { background: #ffc107; color: black; }
+        .btn-spin { background: #dc3545; }
+        .btn-spin.spinning { 
+            background: #ff6b6b; 
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        .compound-info {
+            margin-top: 20px;
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+
+        .smiles-code {
+            background: #f8f9fa;
+            color: #e83e8c;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .compound-content {
+                flex-direction: column;
+            }
+            
+            .structure-2d, .structure-3d {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌿 Medicinal Leaf Classifier</h1>
+            <p>Upload a leaf image to identify the plant and explore its phytochemical compounds with interactive 3D molecular visualization!</p>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                <h3>📁 Click to Upload Leaf Image</h3>
+                <p>Or drag and drop your image here</p>
+                <p style="margin-top: 10px; font-size: 14px; color: #666;">Supported formats: JPG, PNG, JPEG</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*">
+            <div id="imagePreview"></div>
+            <button class="predict-btn" id="predictBtn">🔍 Analyze Leaf</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing your leaf image... Please wait</p>
+        </div>
+
+        <div class="results" id="results">
+            <div class="prediction-result" id="predictionResult"></div>
+            <div class="chart-container" id="chartContainer">
+                <h3>📊 Model Performance Comparison</h3>
+                <div class="chart-wrapper">
+                    <canvas id="modelChart"></canvas>
+                </div>
+            </div>
+            <div class="model-confidence" id="modelConfidence"></div>
+            <div class="compounds-section" id="compoundsSection"></div>
+        </div>
+    </div>
+
+    <script>
+        // Global viewer storage
+        window.molViewers = {};
+        let selectedFile = null;
+
+        // File upload handling
+        const fileInput = document.getElementById('fileInput');
+        const uploadBox = document.querySelector('.upload-box');
+        const imagePreview = document.getElementById('imagePreview');
+        const predictBtn = document.getElementById('predictBtn');
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+
+        fileInput.addEventListener('change', handleFileSelect);
+        uploadBox.addEventListener('dragover', handleDragOver);
+        uploadBox.addEventListener('drop', handleDrop);
+        predictBtn.addEventListener('click', predictLeaf);
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                showImagePreview(file);
+                predictBtn.style.display = 'inline-block';
+            }
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            uploadBox.classList.add('dragover');
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            uploadBox.classList.remove('dragover');
+            
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                selectedFile = files[0];
+                showImagePreview(files[0]);
+                predictBtn.style.display = 'inline-block';
+                fileInput.files = files;
+            }
+        }
+
+        function showImagePreview(file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagePreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded image" class="image-preview">`;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function predictLeaf() {
+            if (!selectedFile) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            // Show loading
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            predictBtn.disabled = true;
+
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data.result, data.compounds);
+                } else {
+                    showError(data.error || 'Prediction failed');
+                }
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                loading.style.display = 'none';
+                predictBtn.disabled = false;
+            }
+        }
+
+        function displayResults(result, compounds) {
+            // Display prediction result
+            document.getElementById('predictionResult').innerHTML = `
+                <h2>🎯 Prediction Result</h2>
+                <h3>🌿 ${result.prediction}</h3>
+                <p><strong>Common Name:</strong> ${result.common_name}</p>
+                <p><strong>Confidence:</strong> ${result.confidence}%</p>
+            `;
+
+            // Display model confidence table
+            let tableHTML = `
+                <h3>📊 Model Confidence Scores</h3>
+                <table class="confidence-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Predicted Class</th>
+                            <th>Confidence (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            result.model_results.forEach(row => {
+                tableHTML += `
+                    <tr>
+                        <td>${row.Model}</td>
+                        <td>${row['Predicted Class']}</td>
+                        <td>${row['Confidence (%)']}%</td>
+                    </tr>
+                `;
+            });
+
+            tableHTML += `</tbody></table>`;
+            document.getElementById('modelConfidence').innerHTML = tableHTML;
+
+            // Create and display model performance chart
+            createModelChart(result.model_results);
+
+            // Display compounds
+            displayCompounds(compounds);
+
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function createModelChart(modelResults) {
+            const ctx = document.getElementById('modelChart').getContext('2d');
+            
+            // Destroy existing chart if it exists and has destroy method
+            if (window.modelChart && typeof window.modelChart.destroy === 'function') {
+                try {
+                    window.modelChart.destroy();
+                } catch (error) {
+                    console.log('Error destroying previous chart:', error);
+                }
+            }
+            
+            // Clear any existing chart instance
+            window.modelChart = null;
+            
+            // Prepare data for chart
+            const labels = modelResults.map(result => result.Model);
+            const confidences = modelResults.map(result => result['Confidence (%)']);
+            
+            // Color scheme for different models
+            const colors = [
+                '#e74c3c', // ResNet50 - Red
+                '#3498db', // MobileNetV2 - Blue  
+                '#f39c12', // EfficientNet-B0 - Orange
+                '#27ae60'  // Ensemble - Green
+            ];
+            
+            const backgroundColors = colors.map(color => color + '20'); // Add transparency
+            const borderColors = colors;
+            
+            try {
+                window.modelChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Confidence (%)',
+                            data: confidences,
+                            backgroundColor: backgroundColors,
+                            borderColor: borderColors,
+                            borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Model Confidence Comparison',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            },
+                            color: '#2c3e50'
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0,0,0,0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.parsed.y.toFixed(2)}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                },
+                                color: '#666'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Confidence (%)',
+                                color: '#2c3e50',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#666',
+                                maxRotation: 45
+                            },
+                            title: {
+                                display: true,
+                                text: 'Models',
+                                color: '#2c3e50',
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutQuart'
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+            } catch (error) {
+                console.error('Error creating model chart:', error);
+                // Fallback: show error message in chart container
+                document.getElementById('modelChart').parentElement.innerHTML = `
+                    <h3>📊 Model Performance Comparison</h3>
+                    <p style="text-align: center; color: #dc3545; padding: 20px;">
+                        Error creating chart. Model results are still available in the table below.
+                    </p>
+                `;
+            }
+        }
+
+        function displayCompounds(compounds) {
+            const compoundsSection = document.getElementById('compoundsSection');
+            
+            if (compounds.length === 0) {
+                compoundsSection.innerHTML = `
+                    <h3>🧪 Phytochemical Compounds</h3>
+                    <p style='text-align: center; color: #666; padding: 40px;'>No phytochemical data available for this plant.</p>
+                `;
+                return;
+            }
+
+            let html = `
+                <h3>🧪 Phytochemical Compounds with Interactive 3D Models</h3>
+                <p style='background: #e8f5e8; padding: 10px; border-radius: 5px; color: #2d5a2d; margin-bottom: 20px;'>
+                    <strong>🎮 Interactive 3D models below!</strong> You can rotate, zoom, and interact with each molecule.
+                </p>
+            `;
+
+            compounds.forEach((compound, index) => {
+                const viewerId = `molviewer_${index}`;
+                
+                html += `
+                    <div class="compound-card">
+                        <h4 class="compound-header">🧪 ${compound.name}</h4>
+                        
+                        <div class="compound-content">
+                            <div class="structure-2d">
+                                <h5 class="structure-title">📋 2D Structure</h5>
+                `;
+
+                if (compound.image_2d) {
+                    html += `<div style="text-align: center;"><img src="${compound.image_2d}" style="max-width: 100%; height: auto; border-radius: 8px;"></div>`;
+                } else {
+                    html += `<p style='text-align: center; color: #666;'>Could not generate 2D structure</p>`;
+                }
+
+                html += `
+                            </div>
+                            
+                            <div class="structure-3d">
+                                <h5 class="structure-title">🎮 Interactive 3D Model</h5>
+                `;
+
+                if (compound.mol_block_3d) {
+                    html += `
+                                <div id="${viewerId}" class="viewer-container"></div>
+                                <div class="controls">
+                                    <button class="control-btn btn-stick" onclick="changeStyle('${viewerId}', 'stick')">Stick</button>
+                                    <button class="control-btn btn-ball" onclick="changeStyle('${viewerId}', 'ballstick')">Ball & Stick</button>
+                                    <button class="control-btn btn-sphere" onclick="changeStyle('${viewerId}', 'sphere')">Space Fill</button>
+                                    <button id="spin_${viewerId}" class="control-btn btn-spin" onclick="toggleSpin('${viewerId}')">Spin</button>
+                                </div>
+                    `;
+                } else {
+                    html += `<p style='text-align: center; color: #666;'>No SMILES data available for 3D visualization</p>`;
+                }
+
+                html += `
+                            </div>
+                        </div>
+                        
+                        <div class="compound-info">
+                            <div style='margin-bottom: 10px;'>
+                                <strong style='color: #495057;'>SMILES:</strong> 
+                                <code class="smiles-code">${compound.smiles || 'Not available'}</code>
+                            </div>
+                            <div>
+                                <strong style='color: #495057;'>Description:</strong> 
+                                <span style='color: #6c757d;'>${compound.description}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            compoundsSection.innerHTML = html;
+
+            // Initialize 3D viewers
+            setTimeout(() => initializeViewers(compounds), 100);
+        }
+
+        function initializeViewers(compounds) {
+            compounds.forEach((compound, index) => {
+                if (compound.mol_block_3d) {
+                    const viewerId = `molviewer_${index}`;
+                    try {
+                        console.log(`Initializing viewer: ${viewerId}`);
+                        
+                        window.molViewers[viewerId] = $3Dmol.createViewer(viewerId, {
+                            defaultcolors: $3Dmol.rasmolElementColors
+                        });
+                        
+                        window.molViewers[viewerId].addModel(compound.mol_block_3d, "mol");
+                        window.molViewers[viewerId].setStyle({
+                            stick: {colorscheme: "Jmol"},
+                            sphere: {scale: 0.3, colorscheme: "Jmol"}
+                        });
+                        window.molViewers[viewerId].setBackgroundColor(0xffffff);
+                        window.molViewers[viewerId].zoomTo();
+                        window.molViewers[viewerId].render();
+                        
+                        console.log(`Viewer ${viewerId} initialized successfully`);
+                    } catch (error) {
+                        console.error(`Error initializing viewer ${viewerId}:`, error);
+                        document.getElementById(viewerId).innerHTML = '<p style="text-align: center; color: red; padding: 20px;">Error loading 3D model</p>';
+                    }
+                }
+            });
+        }
+
+        // Control functions
+        function changeStyle(viewerId, style) {
+            if (window.molViewers[viewerId]) {
+                try {
+                    if (style === 'stick') {
+                        window.molViewers[viewerId].setStyle({stick: {colorscheme: "Jmol"}});
+                    } else if (style === 'ballstick') {
+                        window.molViewers[viewerId].setStyle({
+                            stick: {colorscheme: "Jmol"},
+                            sphere: {scale: 0.3, colorscheme: "Jmol"}
+                        });
+                    } else if (style === 'sphere') {
+                        window.molViewers[viewerId].setStyle({sphere: {colorscheme: "Jmol"}});
+                    }
+                    window.molViewers[viewerId].render();
+                } catch (error) {
+                    console.error('Error changing style:', error);
+                }
+            }
+        }
+
+        function toggleSpin(viewerId) {
+            if (window.molViewers[viewerId]) {
+                try {
+                    const spinButton = document.getElementById(`spin_${viewerId}`);
+                    
+                    // Check if viewer has spin state tracking
+                    if (!window.molViewers[viewerId].spinState) {
+                        window.molViewers[viewerId].spinState = false;
+                    }
+                    
+                    if (window.molViewers[viewerId].spinState) {
+                        // Stop spinning
+                        window.molViewers[viewerId].spin(false);
+                        window.molViewers[viewerId].spinState = false;
+                        if (spinButton) {
+                            spinButton.classList.remove('spinning');
+                            spinButton.textContent = 'Spin';
+                        }
+                        console.log(`Stopped spinning ${viewerId}`);
+                    } else {
+                        // Start spinning - spin around Y axis
+                        window.molViewers[viewerId].spin('y', 1);
+                        window.molViewers[viewerId].spinState = true;
+                        if (spinButton) {
+                            spinButton.classList.add('spinning');
+                            spinButton.textContent = 'Stop';
+                        }
+                        console.log(`Started spinning ${viewerId}`);
+                    }
+                } catch (error) {
+                    console.error('Error toggling spin:', error);
+                    // Fallback - try different spin methods
+                    try {
+                        if (!window.molViewers[viewerId].spinState) {
+                            window.molViewers[viewerId].spin('y');
+                            window.molViewers[viewerId].spinState = true;
+                        } else {
+                            window.molViewers[viewerId].spin(false);
+                            window.molViewers[viewerId].spinState = false;
+                        }
+                    } catch (e) {
+                        console.error('Fallback spin also failed:', e);
+                    }
+                }
+            } else {
+                console.error('Viewer not found:', viewerId);
+            }
+        }
+
+        function showError(message) {
+            results.innerHTML = `<div class="error">❌ Error: ${message}</div>`;
+            results.style.display = 'block';
+        }
+
+        // Remove dragover class when leaving
+        uploadBox.addEventListener('dragleave', function() {
+            uploadBox.classList.remove('dragover');
+        });
+    </script>
+</body>
+</html>

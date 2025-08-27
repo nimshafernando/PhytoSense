@@ -1,0 +1,1287 @@
+{
+  "Aloevera": {
+    "common_name": "Aloe vera",
+    "phytochemicals": [
+      {
+        "name": "Aloe-emodin",
+        "smiles": "CC1=C(C(=O)C2=C(C1=O)C=CC(=C2)O)C=O",
+        "description": "Anthraquinone derivative with anticancer activity through apoptosis induction and cell cycle arrest in various cancer cell lines."
+      },
+      {
+        "name": "Barbaloin",
+        "smiles": "COC1=CC(=C2C(=C1)C(=O)C3=C(C2=O)C(=C(C=C3O)O)O)C=O",
+        "description": "Anthraquinone glycoside with anti-inflammatory and potential anticancer properties through oxidative stress modulation."
+      },
+      {
+        "name": "Chrysophanol",
+        "smiles": "CC1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=CC(=C3)O",
+        "description": "Anthraquinone with cytotoxic effects against cancer cells and anti-metastatic properties."
+      }
+    ]
+  },
+  "Amla": {
+    "common_name": "Phyllanthus emblica",
+    "phytochemicals": [
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      },
+      {
+        "name": "Ellagic acid",
+        "smiles": "C1=C2C(=C(C=C1O)O)C(=O)OC3=CC(=C(C4=C3C(=O)OC5=C4C=C(C=C5O)O)O)O2",
+        "description": "Polyphenolic compound with potent anticancer effects through p53 activation and EGFR inhibition in multiple cancer types."
+      }
+    ]
+  },
+  "Amruthaballi": {
+    "common_name": "Tinospora cordifolia",
+    "phytochemicals": [
+      {
+        "name": "Berberine",
+        "smiles": "COC1=C(C2=C[N+]3=C(C=C2C=C1)C4=CC5=C(C=C4CC3)OCO5)OC",
+        "description": "Isoquinoline alkaloid with anticancer activity through multiple pathways including AMPK activation and apoptosis induction."
+      },
+      {
+        "name": "Tinosporin",
+        "smiles": "CC1=CC(=C(C=C1C2=COC3=C2C=CC(=C3)O)O)O",
+        "description": "Furanolactone diterpenoid with immunomodulatory and potential anticancer properties through NF-κB pathway inhibition."
+      },
+      {
+        "name": "Palmatine",
+        "smiles": "COC1=C(C2=C[N+]3=C(C=C2C=C1OC)C4=CC(=C(C=C4CC3)OC)OC)OC",
+        "description": "Isoquinoline alkaloid with cytotoxic effects against various cancer cell lines and anti-inflammatory activity."
+      }
+    ]
+  },
+  "Arali": {
+    "common_name": "Nerium oleander",
+    "phytochemicals": [
+      {
+        "name": "Oleandrin",
+        "smiles": "CC1CCC(CC1OC2C(C(C(C(O2)C)O)O)O)C3=CC4=C(C=C3)OCO4",
+        "description": "Cardiac glycoside with potent anticancer activity through Na+/K+-ATPase inhibition and apoptosis induction in cancer cells."
+      },
+      {
+        "name": "Neriifolin",
+        "smiles": "CC1CCC2(C(C1)C(CC3C2CCC4C3(CCC(C4)C5=CC6=C(C=C5)OCO6)C)O)C",
+        "description": "Cardiac glycoside with cytotoxic effects against various cancer cell lines through disruption of cellular ion balance."
+      }
+    ]
+  },
+  "Astma_weed": {
+    "common_name": "Euphorbia hirta",
+    "phytochemicals": [
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with antioxidant and anticancer properties, effective against oral squamous cell carcinoma through ROS generation."
+      },
+      {
+        "name": "Euphol",
+        "smiles": "CC(=CCCC(C)(C1CCC2(C1C(CC3C2CCC4C3(CCC(C4(C)C)O)C)C)C)C)C",
+        "description": "Triterpene alcohol with anti-inflammatory and potential anticancer activity through modulation of immune responses."
+      }
+    ]
+  },
+  "Badipala": {
+    "common_name": "Cissus quadrangularis",
+    "phytochemicals": [
+      {
+        "name": "Resveratrol",
+        "smiles": "C1=CC(=CC=C1C=CC2=CC(=CC(=C2)O)O)O",
+        "description": "Stilbenoid with potent anticancer effects through SIRT1 activation, p53 upregulation, and anti-angiogenic properties."
+      },
+      {
+        "name": "Quadrangularic acid A",
+        "smiles": "CC1=C(C(=O)C(=C(C1=O)C)C(=O)O)C(=O)O",
+        "description": "Triterpenoid with anti-inflammatory and potential anticancer activity through NF-κB pathway modulation."
+      }
+    ]
+  },
+  "Bamboo": {
+    "common_name": "Bambusa vulgaris",
+    "phytochemicals": [
+      {
+        "name": "Bamboo extract silica",
+        "smiles": "O=[Si]=O",
+        "description": "Silicon compound with potential anticancer activity through enhanced immune response and cellular repair mechanisms."
+      },
+      {
+        "name": "Friedelin",
+        "smiles": "CC1(C2CCC3(C(C2CCC1)C(CC4C3CCC5C4(CCCC5(C)C)C)C)C)C",
+        "description": "Pentacyclic triterpene with anti-inflammatory and potential anticancer properties."
+      }
+    ]
+  },
+  "Beans": {
+    "common_name": "Phaseolus vulgaris",
+    "phytochemicals": [
+      {
+        "name": "Phaseolin",
+        "smiles": "COC1=C(C=C2C(=C1)C(=O)C(=C(O2)C3=CC(=C(C=C3)O)O)O)O",
+        "description": "Isoflavone with anticancer activity through estrogen receptor modulation and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Betel": {
+    "common_name": "Piper betle",
+    "phytochemicals": [
+      {
+        "name": "Chavicol",
+        "smiles": "C=CCC1=CC=C(C=C1)O",
+        "description": "Phenolic compound with antimicrobial and potential anticancer properties through oxidative stress modulation."
+      },
+      {
+        "name": "Eugenol",
+        "smiles": "C=CCC1=CC(=C(C=C1)O)OC",
+        "description": "Phenolic compound with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      }
+    ]
+  },
+  "Bhrami": {
+    "common_name": "Bacopa monnieri",
+    "phytochemicals": [
+      {
+        "name": "Bacoside A",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CCC(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Triterpenoid saponin with neuroprotective and potential anticancer activity through enhanced cellular communication."
+      },
+      {
+        "name": "Brahmine",
+        "smiles": "C1=CC2=C(C=C1)C(=C(N2)C3=CC=CC=C3)C(=O)O",
+        "description": "Alkaloid with potential anticancer effects through multiple cellular pathways."
+      }
+    ]
+  },
+  "Bringaraja": {
+    "common_name": "Eclipta prostrata",
+    "phytochemicals": [
+      {
+        "name": "Wedelolactone",
+        "smiles": "C1=CC2=C3C(=C1O)C(=O)C4=C(C3=O)C=C(C=C4O)O2",
+        "description": "Coumestan with anticancer activity through DNA topoisomerase inhibition and apoptosis induction."
+      },
+      {
+        "name": "Ecliptine",
+        "smiles": "CC1=C(C(=C(C=C1C)O)C2=CC=CC=C2)O",
+        "description": "Thiophene derivative with hepatoprotective and potential anticancer properties."
+      }
+    ]
+  },
+  "Caricature": {
+    "common_name": "Graptophyllum pictum",
+    "phytochemicals": [
+      {
+        "name": "Anthocyanins",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Pigment compounds with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Castor": {
+    "common_name": "Ricinus communis",
+    "phytochemicals": [
+      {
+        "name": "Ricinoleic acid",
+        "smiles": "CCCCCCCC(CC=CCCCCCCCC(=O)O)O",
+        "description": "Hydroxy fatty acid with anti-inflammatory and potential anticancer properties through prostaglandin modulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Catharanthus": {
+    "common_name": "Catharanthus roseus",
+    "phytochemicals": [
+      {
+        "name": "Vincristine",
+        "smiles": "CCC1(CC2CC(C3=C(CCN(C2)C1)C4=CC=CC=C4N3)(C5=C(C=CC6=C5OC(=O)C7=C6NC8=CC=CC=C78)OC)C(=O)OC)O",
+        "description": "Vinca alkaloid with potent anticancer activity through microtubule disruption and mitotic arrest in cancer cells."
+      },
+      {
+        "name": "Vinblastine",
+        "smiles": "CCC1(CC2CC(C3=C(CCN(C2)C1)C4=CC=CC=C4N3)(C5=C(C=CC6=C5OC(=O)C7=C6NC8=CC=CC=C78)OC)C(=O)OC)C",
+        "description": "Vinca alkaloid with anticancer properties through tubulin binding and cell cycle arrest."
+      }
+    ]
+  },
+  "Chakte": {
+    "common_name": "Cassia fistula",
+    "phytochemicals": [
+      {
+        "name": "Chrysophanol",
+        "smiles": "CC1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=CC(=C3)O",
+        "description": "Anthraquinone with cytotoxic effects against cancer cells and anti-metastatic properties."
+      },
+      {
+        "name": "Fistulic acid",
+        "smiles": "CC1=C(C(=O)C2=C(C1=O)C=CC(=C2)O)C(=O)O",
+        "description": "Anthraquinone derivative with potential anticancer activity through oxidative stress induction."
+      }
+    ]
+  },
+  "Chilly": {
+    "common_name": "Capsicum annuum",
+    "phytochemicals": [
+      {
+        "name": "Capsaicin",
+        "smiles": "COC1=CC(=CC=C1)CCNC(=O)CCCCCCCC=C",
+        "description": "Vanillamide alkaloid with anticancer activity through TRPV1 receptor activation and apoptosis induction in cancer cells."
+      },
+      {
+        "name": "Dihydrocapsaicin",
+        "smiles": "COC1=CC(=CC=C1)CCNC(=O)CCCCCCCCC",
+        "description": "Capsaicinoid with anticancer properties through similar mechanisms as capsaicin."
+      }
+    ]
+  },
+  "Citron lime (herelikai)": {
+    "common_name": "Citrus medica",
+    "phytochemicals": [
+      {
+        "name": "Limonene",
+        "smiles": "CC1=CCC(CC1)C(=C)C",
+        "description": "Monoterpene with anticancer activity through apoptosis induction and phase I/II enzyme modulation."
+      },
+      {
+        "name": "Hesperidin",
+        "smiles": "COC1=C(C=C(C=C1)C2CC(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Flavanone glycoside with anticancer properties through antioxidant and anti-inflammatory mechanisms."
+      }
+    ]
+  },
+  "Coffee": {
+    "common_name": "Coffea arabica",
+    "phytochemicals": [
+      {
+        "name": "Caffeine",
+        "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+        "description": "Purine alkaloid with potential anticancer effects through cell cycle modulation and DNA repair enhancement."
+      },
+      {
+        "name": "Chlorogenic acid",
+        "smiles": "C1=CC(=C(C=C1C=CC(=O)O)O)O",
+        "description": "Phenolic acid with antioxidant and anticancer properties through multiple cellular pathways."
+      }
+    ]
+  },
+  "Common rue(naagdalli)": {
+    "common_name": "Ruta graveolens",
+    "phytochemicals": [
+      {
+        "name": "Rutin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid glycoside with anticancer activity through antioxidant mechanisms and cell cycle arrest."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Coriender": {
+    "common_name": "Coriandrum sativum",
+    "phytochemicals": [
+      {
+        "name": "Linalool",
+        "smiles": "CC(C)(C=C)C(C)(C)O",
+        "description": "Monoterpene alcohol with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Curry": {
+    "common_name": "Murraya koenigii",
+    "phytochemicals": [
+      {
+        "name": "Mahanimbine",
+        "smiles": "COC1=CC2=C(C=C1)C3=C(N2)C=CC4=C3NC5=CC=CC=C45",
+        "description": "Carbazole alkaloid with anticancer activity through multiple pathways including apoptosis induction."
+      },
+      {
+        "name": "Murrayanol",
+        "smiles": "COC1=CC2=C(C=C1)C3=C(N2)C=CC(=C3)O",
+        "description": "Carbazole alkaloid with potential anticancer effects through oxidative stress modulation."
+      }
+    ]
+  },
+  "Doddpathre": {
+    "common_name": "Coleus amboinicus",
+    "phytochemicals": [
+      {
+        "name": "Rosmarinic acid",
+        "smiles": "C1=CC(=C(C=C1CC(C(=O)O)NC(=O)C=CC2=CC(=C(C=C2)O)O)O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity through multiple cellular mechanisms."
+      },
+      {
+        "name": "Carvacrol",
+        "smiles": "CC1=CC(=C(C=C1)C(C)C)O",
+        "description": "Monoterpene phenol with anticancer properties through apoptosis induction and cell cycle arrest."
+      }
+    ]
+  },
+  "Drumstick": {
+    "common_name": "Moringa oleifera",
+    "phytochemicals": [
+      {
+        "name": "Niazimicin",
+        "smiles": "CCCCCCCCCCCCC(=O)NCCCC(=O)O",
+        "description": "Nitrile glycoside with anticancer activity through apoptosis induction and cell cycle modulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Ekka": {
+    "common_name": "Calotropis gigantea",
+    "phytochemicals": [
+      {
+        "name": "Calotropin",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)O",
+        "description": "Cardiac glycoside with anticancer activity through Na+/K+-ATPase inhibition and apoptosis induction."
+      },
+      {
+        "name": "Uscharin",
+        "smiles": "CC1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=CC(=C3)O",
+        "description": "Cardiac glycoside with cytotoxic effects against cancer cells."
+      }
+    ]
+  },
+  "Eucalyptus": {
+    "common_name": "Eucalyptus globulus",
+    "phytochemicals": [
+      {
+        "name": "1,8-Cineole",
+        "smiles": "CC1(C2CCC(O2)(CC1)C)C",
+        "description": "Monoterpene oxide with anti-inflammatory and potential anticancer activity through oxidative stress modulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Ganigale": {
+    "common_name": "Solanum nigrum",
+    "phytochemicals": [
+      {
+        "name": "Solanine",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)NC3CCC4(C3CC5C6CC=C7CC(CCC7(C6CCC45C)C)O)C",
+        "description": "Glycoalkaloid with anticancer activity through membrane disruption and apoptosis induction."
+      },
+      {
+        "name": "Solasonine",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)NC3CCC4(C3CC5C6CC=C7CC(CCC7(C6CCC45C)C)O)C",
+        "description": "Glycoalkaloid with cytotoxic effects against various cancer cell lines."
+      }
+    ]
+  },
+  "Ganike": {
+    "common_name": "Solanum torvum",
+    "phytochemicals": [
+      {
+        "name": "Chlorogenin",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)NC3CCC4(C3CC5C6CC=C7CC(CCC7(C6CCC45C)C)O)C",
+        "description": "Steroidal glycoside with anticancer activity through cell membrane modulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Gasagase": {
+    "common_name": "Papaver somniferum",
+    "phytochemicals": [
+      {
+        "name": "Morphine",
+        "smiles": "CN1CCC23C4C1CC5=C2C(=C(C=C5)O)OC3C(C=C4)O",
+        "description": "Phenanthrene alkaloid with potential anticancer effects through opioid receptor modulation and apoptosis induction."
+      },
+      {
+        "name": "Codeine",
+        "smiles": "COC1=C(C=C2C3=C1OC4C(C3CCN2C)=C(C=C4)O)O",
+        "description": "Phenanthrene alkaloid with analgesic properties and potential anticancer activity."
+      }
+    ]
+  },
+  "Ginger": {
+    "common_name": "Zingiber officinale",
+    "phytochemicals": [
+      {
+        "name": "Gingerol",
+        "smiles": "COC1=CC(=CC=C1O)CCCCCCC(=O)CC(=O)C",
+        "description": "Phenolic compound with anticancer activity through apoptosis induction, NF-κB inhibition, and anti-inflammatory effects."
+      },
+      {
+        "name": "Shogaol",
+        "smiles": "COC1=CC(=CC=C1O)CCCCC=CC(=O)C",
+        "description": "Phenolic compound with potent anticancer effects through multiple pathways including cell cycle arrest."
+      }
+    ]
+  },
+  "Globe Amarnath": {
+    "common_name": "Gomphrena globosa",
+    "phytochemicals": [
+      {
+        "name": "Betacyanins",
+        "smiles": "C1=CC(=C(C=C1CC(C(=O)O)N)O)O",
+        "description": "Betalain pigments with antioxidant and potential anticancer activity through free radical scavenging."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Guava": {
+    "common_name": "Psidium guajava",
+    "phytochemicals": [
+      {
+        "name": "Lycopene",
+        "smiles": "CC(=CCCC(=CC=CC=C(C)C=CC=C(C)C=CC1=C(CCCC1(C)C)C)C)C=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C",
+        "description": "Carotenoid with potent anticancer activity through antioxidant mechanisms and cell cycle regulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Henna": {
+    "common_name": "Lawsonia inermis",
+    "phytochemicals": [
+      {
+        "name": "Lawsone",
+        "smiles": "C1=CC2=C(C=C1)C(=O)C(=C(O2)O)O",
+        "description": "Naphthoquinone with anticancer activity through DNA intercalation and topoisomerase inhibition."
+      },
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      }
+    ]
+  },
+  "Hibiscus": {
+    "common_name": "Hibiscus rosa-sinensis",
+    "phytochemicals": [
+      {
+        "name": "Anthocyanins",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Pigment compounds with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Honge": {
+    "common_name": "Pongamia pinnata",
+    "phytochemicals": [
+      {
+        "name": "Pongamol",
+        "smiles": "COC1=C(C=C2C(=C1)C(=O)C(=C(O2)C3=CC=CC=C3)O)O",
+        "description": "Flavonoid with anticancer activity through apoptosis induction and cell cycle arrest."
+      },
+      {
+        "name": "Karanjin",
+        "smiles": "COC1=C(C=C2C(=C1)C(=O)C3=C(O2)C=CC(=C3)O)O",
+        "description": "Furanoflavonoid with potential anticancer effects through multiple cellular pathways."
+      }
+    ]
+  },
+  "Insulin": {
+    "common_name": "Costus igneus",
+    "phytochemicals": [
+      {
+        "name": "Costunolide",
+        "smiles": "CC1=C2C(CCC(=C)C2=O)CC(C1)C(=C)C",
+        "description": "Sesquiterpene lactone with anticancer activity through apoptosis induction and NF-κB inhibition."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Jackfruit": {
+    "common_name": "Artocarpus heterophyllus",
+    "phytochemicals": [
+      {
+        "name": "Artocarpin",
+        "smiles": "COC1=C(C=C(C=C1)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O",
+        "description": "Flavonoid with anticancer activity through apoptosis induction and cell cycle modulation."
+      },
+      {
+        "name": "Morin",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Flavonol with anticancer properties through multiple pathways including oxidative stress modulation."
+      }
+    ]
+  },
+  "Jasmine": {
+    "common_name": "Jasminum officinale",
+    "phytochemicals": [
+      {
+        "name": "Benzyl acetate",
+        "smiles": "CC(=O)OCC1=CC=CC=C1",
+        "description": "Ester compound with potential anticancer activity through cellular membrane modulation."
+      },
+      {
+        "name": "Linalool",
+        "smiles": "CC(C)(C=C)C(C)(C)O",
+        "description": "Monoterpene alcohol with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      }
+    ]
+  },
+  "Kambajala": {
+    "common_name": "Phyllanthus emblica",
+    "phytochemicals": [
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      },
+      {
+        "name": "Ellagic acid",
+        "smiles": "C1=C2C(=C(C=C1O)O)C(=O)OC3=CC(=C(C4=C3C(=O)OC5=C4C=C(C=C5O)O)O)O2",
+        "description": "Polyphenolic compound with potent anticancer effects through p53 activation and EGFR inhibition in multiple cancer types."
+      }
+    ]
+  },
+  "Kasambruga": {
+    "common_name": "Coriandrum sativum",
+    "phytochemicals": [
+      {
+        "name": "Linalool",
+        "smiles": "CC(C)(C=C)C(C)(C)O",
+        "description": "Monoterpene alcohol with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Kohlrabi": {
+    "common_name": "Brassica oleracea",
+    "phytochemicals": [
+      {
+        "name": "Sulforaphane",
+        "smiles": "CS(=O)NCCCC(=S)NOC",
+        "description": "Isothiocyanate with potent anticancer activity through Nrf2 activation and phase II enzyme induction."
+      },
+      {
+        "name": "Indole-3-carbinol",
+        "smiles": "C1=CC=C2C(=C1)C(=CN2)CCO",
+        "description": "Indole compound with anticancer effects through estrogen metabolism modulation and apoptosis induction."
+      }
+    ]
+  },
+  "Lantana": {
+    "common_name": "Lantana camara",
+    "phytochemicals": [
+      {
+        "name": "Lantadene A",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CCC(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Pentacyclic triterpenoid with hepatotoxic properties but potential anticancer activity at controlled doses."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Lemon": {
+    "common_name": "Citrus limon",
+    "phytochemicals": [
+      {
+        "name": "Limonene",
+        "smiles": "CC1=CCC(CC1)C(=C)C",
+        "description": "Monoterpene with anticancer activity through apoptosis induction and phase I/II enzyme modulation."
+      },
+      {
+        "name": "Citric acid",
+        "smiles": "C(C(=O)O)C(CC(=O)O)(C(=O)O)O",
+        "description": "Organic acid with potential anticancer effects through pH modulation and cellular metabolism enhancement."
+      }
+    ]
+  },
+  "Lemongrass": {
+    "common_name": "Cymbopogon citratus",
+    "phytochemicals": [
+      {
+        "name": "Citral",
+        "smiles": "CC(=CCCC(=C)C=O)C",
+        "description": "Monoterpene aldehyde with anticancer activity through apoptosis induction and cell cycle arrest."
+      },
+      {
+        "name": "Geraniol",
+        "smiles": "CC(=CCCC(=CCO)C)C",
+        "description": "Monoterpene alcohol with anticancer properties through multiple cellular pathways."
+      }
+    ]
+  },
+  "Malabar_Nut": {
+    "common_name": "Adhatoda vasica",
+    "phytochemicals": [
+      {
+        "name": "Vasicine",
+        "smiles": "C1CN2C(=O)C3=C(C=CC=C3N=C2C4=C1C=CC=C4O)O",
+        "description": "Quinazoline alkaloid with bronchodilatory and potential anticancer properties."
+      },
+      {
+        "name": "Vasicinone",
+        "smiles": "C1CN2C(=O)C3=C(C=CC=C3N=C2C4=C1C=CC=C4O)O",
+        "description": "Quinazoline alkaloid with antimicrobial and potential anticancer activity."
+      }
+    ]
+  },
+  "Malabar_Spinach": {
+    "common_name": "Basella alba",
+    "phytochemicals": [
+      {
+        "name": "Betacyanins",
+        "smiles": "C1=CC(=C(C=C1CC(C(=O)O)N)O)O",
+        "description": "Betalain pigments with antioxidant and potential anticancer activity through free radical scavenging."
+      },
+      {
+        "name": "Saponins",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)O",
+        "description": "Glycoside compounds with anticancer activity through membrane permeabilization and apoptosis induction."
+      }
+    ]
+  },
+  "Mango": {
+    "common_name": "Mangifera indica",
+    "phytochemicals": [
+      {
+        "name": "Mangiferin",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Xanthonoid with potent anticancer activity through multiple pathways including apoptosis and angiogenesis inhibition."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Marigold": {
+    "common_name": "Tagetes erecta",
+    "phytochemicals": [
+      {
+        "name": "Lutein",
+        "smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C)C)C",
+        "description": "Carotenoid with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Mint": {
+    "common_name": "Mentha spicata",
+    "phytochemicals": [
+      {
+        "name": "Menthol",
+        "smiles": "CC(C)C1CCC(CC1)O",
+        "description": "Monoterpene alcohol with cooling properties and potential anticancer activity through membrane modulation."
+      },
+      {
+        "name": "Rosmarinic acid",
+        "smiles": "C1=CC(=C(C=C1CC(C(=O)O)NC(=O)C=CC2=CC(=C(C=C2)O)O)O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity through multiple cellular mechanisms."
+      }
+    ]
+  },
+  "Neem": {
+    "common_name": "Azadirachta indica",
+    "phytochemicals": [
+      {
+        "name": "Azadirachtin",
+        "smiles": "COC1C2C(C3C(C(O2)OC4C(C(C(C(O4)CO)O)O)O)OC(=O)C=CC5=CC=CC=C5)(CCC(C3(C)C)OC(=O)C)C1O",
+        "description": "Limonoid with anticancer activity through multiple pathways including apoptosis induction and cell cycle arrest."
+      },
+      {
+        "name": "Nimbolide",
+        "smiles": "CC1CCC2(C(C1)C(CC3C2C(C4C3(CCC(C4)C(=C)C)C)C)C)C",
+        "description": "Limonoid with potent anticancer effects through NF-κB inhibition and apoptosis induction."
+      }
+    ]
+  },
+  "Nelavembu": {
+    "common_name": "Andrographis paniculata",
+    "phytochemicals": [
+      {
+        "name": "Andrographolide",
+        "smiles": "CC1=C2C(CCC(C2(CCC1)C)C(=C)C)C(C=C)C(=O)O",
+        "description": "Diterpenoid lactone with potent anticancer activity through NF-κB inhibition, apoptosis induction, and cell cycle arrest."
+      },
+      {
+        "name": "Neoandrographolide",
+        "smiles": "CC1=C2C(CCC(C2(CCC1)C)C(=C)C)C(C=C)C(=O)O",
+        "description": "Diterpenoid with anticancer properties through similar mechanisms as andrographolide."
+      }
+    ]
+  },
+  "Nerale": {
+    "common_name": "Syzygium cumini",
+    "phytochemicals": [
+      {
+        "name": "Anthocyanins",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Pigment compounds with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Oleanolic acid",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CCC(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer activity through multiple pathways including apoptosis and angiogenesis inhibition."
+      }
+    ]
+  },
+  "Nooni": {
+    "common_name": "Morinda citrifolia",
+    "phytochemicals": [
+      {
+        "name": "Damnacanthal",
+        "smiles": "COC1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=C(C=C3O)O",
+        "description": "Anthraquinone with anticancer activity through DNA intercalation and topoisomerase inhibition."
+      },
+      {
+        "name": "Scopoletin",
+        "smiles": "COC1=CC2=C(C=C1)OC(=O)C=C2O",
+        "description": "Coumarin with anticancer properties through multiple cellular pathways."
+      }
+    ]
+  },
+  "Onion": {
+    "common_name": "Allium cepa",
+    "phytochemicals": [
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Allicin",
+        "smiles": "CC(=O)SSCCC",
+        "description": "Organosulfur compound with anticancer activity through apoptosis induction and cell cycle arrest."
+      }
+    ]
+  },
+  "Padri": {
+    "common_name": "Stereospermum colais",
+    "phytochemicals": [
+      {
+        "name": "Lapachol",
+        "smiles": "CC(=C)C1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=CC(=C3)O",
+        "description": "Naphthoquinone with anticancer activity through DNA intercalation and topoisomerase inhibition."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Palak(Spinach)": {
+    "common_name": "Spinacia oleracea",
+    "phytochemicals": [
+      {
+        "name": "Chlorophyll",
+        "smiles": "CC1=C2C=C3C(=C(C4=CC5=C(C(=C([N-]5)C=C6C(=C(C(=N6)C=C1[N-]2)C)C(=O)OC)C)C(=O)O)N4)C)C(=N3)C=C",
+        "description": "Porphyrin with potential anticancer activity through photodynamic therapy and antioxidant mechanisms."
+      },
+      {
+        "name": "Neoxanthin",
+        "smiles": "CC(=O)C=C(C)C=CC=C(C)C=CC1=C(CCCC1(C)C)C",
+        "description": "Carotenoid with anticancer potential through antioxidant activity and immune system modulation."
+      }
+    ]
+  },
+  "Papaya": {
+    "common_name": "Carica papaya",
+    "phytochemicals": [
+      {
+        "name": "Papain",
+        "smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C)C)C",
+        "description": "Proteolytic enzyme with anticancer activity through protein degradation and apoptosis induction."
+      },
+      {
+        "name": "Lycopene",
+        "smiles": "CC(=CCCC(=CC=CC=C(C)C=CC=C(C)C=CC1=C(CCCC1(C)C)C)C)C=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C",
+        "description": "Carotenoid with potent anticancer activity through antioxidant mechanisms and cell cycle regulation."
+      }
+    ]
+  },
+  "Parijatha": {
+    "common_name": "Nyctanthes arbor-tristis",
+    "phytochemicals": [
+      {
+        "name": "Nyctanthin",
+        "smiles": "COC1=C(C=C2C(=C1)C(=O)C(=C(O2)C3=CC=CC=C3)O)O",
+        "description": "Flavonoid with anti-inflammatory and potential anticancer properties."
+      },
+      {
+        "name": "β-Sitosterol",
+        "smiles": "CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C",
+        "description": "Plant sterol with anti-inflammatory and anticancer properties through membrane stabilization and apoptosis induction."
+      }
+    ]
+  },
+  "Balloon_Vine": {
+    "common_name": "Cardiospermum halicacabum",
+    "phytochemicals": [
+      {
+        "name": "Lupeol",
+        "smiles": "CC(=C)C1CCC2(C1C(CC3C2(CCC4C3(CCC(C4(C)C)O)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer activity through multiple pathways including p53 activation and VEGF inhibition."
+      },
+      {
+        "name": "Apigenin",
+        "smiles": "C1=CC(=CC=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Flavone with EGFR inhibitory activity and anticancer effects through cell cycle arrest and apoptosis induction."
+      },
+      {
+        "name": "β-Sitosterol",
+        "smiles": "CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C",
+        "description": "Plant sterol with anti-inflammatory and anticancer properties through membrane stabilization and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Pea": {
+    "common_name": "Pisum sativum",
+    "phytochemicals": [
+      {
+        "name": "Saponins",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)O",
+        "description": "Glycoside compounds with anticancer activity through membrane permeabilization and apoptosis induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Pepper": {
+    "common_name": "Piper nigrum",
+    "phytochemicals": [
+      {
+        "name": "Piperine",
+        "smiles": "C1=CC2=C(C=C1)OCO2C=CC(=O)N3CCCCC3",
+        "description": "Alkaloid with anticancer activity through multiple pathways including apoptosis induction and bioavailability enhancement."
+      },
+      {
+        "name": "Chavicine",
+        "smiles": "C1=CC2=C(C=C1)OCO2C=CC(=O)NCCCC",
+        "description": "Alkaloid with potential anticancer effects through cellular stress modulation."
+      },
+      {
+        "name": "Capsaicin",
+        "smiles": "COC1=CC(=CC=C1)CCNC(=O)CCCCCCCC=C",
+        "description": "Vanillamide alkaloid with anticancer activity through TRPV1 receptor activation and apoptosis induction in cancer cells."
+      }
+    ]
+  },
+  "Pomoegranate": {
+    "common_name": "Punica granatum",
+    "phytochemicals": [
+      {
+        "name": "Punicalagin",
+        "smiles": "C1=C2C(=C(C=C1O)O)C(=O)OC3=C(C4=C(C=C3O)C(=O)OC5=C(C=C(C=C5O)O)O2)O4",
+        "description": "Ellagitannin with potent anticancer activity through multiple pathways including apoptosis and angiogenesis inhibition."
+      },
+      {
+        "name": "Ellagic acid",
+        "smiles": "C1=C2C(=C(C=C1O)O)C(=O)OC3=CC(=C(C4=C3C(=O)OC5=C4C=C(C=C5O)O)O)O2",
+        "description": "Polyphenolic compound with potent anticancer effects through p53 activation and EGFR inhibition in multiple cancer types."
+      }
+    ]
+  },
+  "Pumpkin": {
+    "common_name": "Cucurbita pepo",
+    "phytochemicals": [
+      {
+        "name": "β-Carotene",
+        "smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C)C)C",
+        "description": "Carotenoid with anticancer activity through antioxidant mechanisms and immune system enhancement."
+      },
+      {
+        "name": "Lutein",
+        "smiles": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C)C)C",
+        "description": "Carotenoid with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Cucurbitacin E",
+        "smiles": "CC1(C2CCC3(C(C2)C(=O)C4=C3C=CC(=C4)O)C)CC(=O)C(=C1)C(=O)O",
+        "description": "Triterpenoid with potent anticancer activity through JAK/STAT pathway inhibition."
+      }
+    ]
+  },
+  "Raddish": {
+    "common_name": "Raphanus sativus",
+    "phytochemicals": [
+      {
+        "name": "Sulforaphane",
+        "smiles": "CS(=O)NCCCC(=S)NOC",
+        "description": "Isothiocyanate with potent anticancer activity through Nrf2 activation and phase II enzyme induction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Rose": {
+    "common_name": "Rosa damascena",
+    "phytochemicals": [
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Cyanidin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Anthocyanidin with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      }
+    ]
+  },
+  "Sampige": {
+    "common_name": "Michelia champaca",
+    "phytochemicals": [
+      {
+        "name": "Linalool",
+        "smiles": "CC(C)(C=C)C(C)(C)O",
+        "description": "Monoterpene alcohol with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Sapota": {
+    "common_name": "Manilkara zapota",
+    "phytochemicals": [
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      },
+      {
+        "name": "Saponins",
+        "smiles": "CC1C(C(C(C(O1)OC2C(C(C(C(O2)CO)O)O)O)O)O)O",
+        "description": "Glycoside compounds with anticancer activity through membrane permeabilization and apoptosis induction."
+      }
+    ]
+  },
+  "Seethaashoka": {
+    "common_name": "Saraca asoca",
+    "phytochemicals": [
+      {
+        "name": "Epicatechin",
+        "smiles": "C1C(C(OC2=CC(=CC(=C21)O)O)C3=CC(=C(C=C3)O)O)O",
+        "description": "Flavanol with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Gallic acid",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C(=O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity, induces apoptosis and inhibits metastasis in oral cancer cells."
+      }
+    ]
+  },
+  "Seethapala": {
+    "common_name": "Annona squamosa",
+    "phytochemicals": [
+      {
+        "name": "Annonacin",
+        "smiles": "CCCCCCCCCCCCCCCCCCC(CC(C1CCC(O1)CCCCCCCCCCCC(=O)O)O)O",
+        "description": "Acetogenin with potent anticancer activity through mitochondrial complex I inhibition and ATP depletion."
+      },
+      {
+        "name": "Squamocin",
+        "smiles": "CCCCCCCCCCCCCCCCCCC(CC(C1CCC(O1)CCCCCCCCCCC(=O)O)O)O",
+        "description": "Acetogenin with cytotoxic effects against various cancer cell lines through mitochondrial dysfunction."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      }
+    ]
+  },
+  "Spinach1": {
+    "common_name": "Spinacia oleracea",
+    "phytochemicals": [
+      {
+        "name": "Chlorophyll",
+        "smiles": "CC1=C2C=C3C(=C(C4=CC5=C(C(=C([N-]5)C=C6C(=C(C(=N6)C=C1[N-]2)C)C(=O)OC)C)C(=O)O)N4)C)C(=N3)C=C",
+        "description": "Porphyrin with potential anticancer activity through photodynamic therapy and antioxidant mechanisms."
+      },
+      {
+        "name": "Neoxanthin",
+        "smiles": "CC(=O)C=C(C)C=CC=C(C)C=CC1=C(CCCC1(C)C)C",
+        "description": "Carotenoid with anticancer potential through antioxidant activity and immune system modulation."
+      }
+    ]
+  },
+  "Tamarind": {
+    "common_name": "Tamarindus indica",
+    "phytochemicals": [
+      {
+        "name": "Tartaric acid",
+        "smiles": "C(C(C(=O)O)O)(C(=O)O)O",
+        "description": "Organic acid with potential anticancer effects through pH modulation and metal chelation."
+      },
+      {
+        "name": "Procyanidin B1",
+        "smiles": "C1C(C(OC2=C1C(=CC(=C2)O)O)C3=CC(=C(C=C3)O)O)OC4=C(C=C(C=C4O)O)C5C(C(OC6=CC(=CC(=C56)O)O)C7=CC(=C(C=C7)O)O)O",
+        "description": "Proanthocyanidin with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "Lupeol",
+        "smiles": "CC(=C)C1CCC2(C1C(CC3C2(CCC4C3(CCC(C4(C)C)O)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer activity through multiple pathways including p53 activation and VEGF inhibition."
+      }
+    ]
+  },
+  "Taro": {
+    "common_name": "Colocasia esculenta",
+    "phytochemicals": [
+      {
+        "name": "Anthocyanins",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Pigment compounds with anticancer activity through antioxidant mechanisms and apoptosis induction."
+      },
+      {
+        "name": "β-Sitosterol",
+        "smiles": "CCC(CCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C",
+        "description": "Plant sterol with anti-inflammatory and anticancer properties through membrane stabilization and apoptosis induction."
+      }
+    ]
+  },
+  "Tecoma": {
+    "common_name": "Tecoma stans",
+    "phytochemicals": [
+      {
+        "name": "Tecomine",
+        "smiles": "COC1=CC2=C(C=C1)N=CC(=C2)C(=O)O",
+        "description": "Alkaloid with potential anticancer activity through multiple cellular pathways."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Lapachol",
+        "smiles": "CC(=C)C1=CC2=C(C=C1)C(=O)C3=C(C2=O)C=CC(=C3)O",
+        "description": "Naphthoquinone with anticancer activity through DNA intercalation and topoisomerase inhibition."
+      }
+    ]
+  },
+  "Thumbe": {
+    "common_name": "Leucas aspera",
+    "phytochemicals": [
+      {
+        "name": "Oleanolic acid",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CCC(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer activity through multiple pathways including apoptosis and angiogenesis inhibition."
+      },
+      {
+        "name": "Ursolic acid",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CC=C(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer effects through apoptosis induction and cell cycle arrest."
+      }
+    ]
+  },
+  "Tomato": {
+    "common_name": "Solanum lycopersicum",
+    "phytochemicals": [
+      {
+        "name": "Lycopene",
+        "smiles": "CC(=CCCC(=CC=CC=C(C)C=CC=C(C)C=CC1=C(CCCC1(C)C)C)C)C=CC=C(C)C=CC=C(C)C=CC2=C(CCCC2(C)C)C",
+        "description": "Carotenoid with potent anticancer activity through antioxidant mechanisms and cell cycle regulation."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Naringenin",
+        "smiles": "C1=CC(=CC=C1C2CC(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Flavanone with anticancer activity through multiple pathways including cell cycle arrest and apoptosis."
+      }
+    ]
+  },
+  "Tulsi": {
+    "common_name": "Ocimum tenuiflorum",
+    "phytochemicals": [
+      {
+        "name": "Eugenol",
+        "smiles": "C=CCC1=CC(=C(C=C1)O)OC",
+        "description": "Phenolic compound with anticancer properties through apoptosis induction and anti-inflammatory effects."
+      },
+      {
+        "name": "Rosmarinic acid",
+        "smiles": "C1=CC(=C(C=C1CC(C(=O)O)NC(=O)C=CC2=CC(=C(C=C2)O)O)O)O",
+        "description": "Phenolic acid with strong antioxidant and anticancer activity through multiple cellular mechanisms."
+      },
+      {
+        "name": "Ursolic acid",
+        "smiles": "CC1(C2CCC3(C(C2CCC1O)C(CC4C3(CCC5C4(CC=C(C5(C)C)C(=O)O)C)C)C)C)C",
+        "description": "Pentacyclic triterpene with anticancer effects through apoptosis induction and cell cycle arrest."
+      }
+    ]
+  },
+  "Turmeric": {
+    "common_name": "Curcuma longa",
+    "phytochemicals": [
+      {
+        "name": "Curcumin",
+        "smiles": "COC1=C(C=CC(=C1)C=CC(=O)CC(=O)C=CC2=CC(=C(C=C2)O)OC)O",
+        "description": "Polyphenolic compound with potent anticancer activity through multiple pathways including NF-κB inhibition, EGFR downregulation, and apoptosis induction."
+      },
+      {
+        "name": "Demethoxycurcumin",
+        "smiles": "COC1=C(C=CC(=C1)C=CC(=O)CC(=O)C=CC2=CC=C(C=C2)O)O",
+        "description": "Curcuminoid with anticancer properties through anti-inflammatory and pro-apoptotic mechanisms."
+      },
+      {
+        "name": "Bisdemethoxycurcumin",
+        "smiles": "C1=CC(=CC=C1C=CC(=O)CC(=O)C=CC2=CC=C(C=C2)O)O",
+        "description": "Curcuminoid with cytotoxic effects against cancer cells and anti-metastatic properties."
+      }
+    ]
+  },
+  "ashoka": {
+    "common_name": "Saraca asoca",
+    "phytochemicals": [
+      {
+        "name": "Catechin",
+        "smiles": "C1C(C(OC2=CC(=CC(=C21)O)O)C3=CC(=C(C=C3)O)O)O",
+        "description": "Flavanol with anticancer activity through antioxidant mechanisms and cell cycle modulation."
+      },
+      {
+        "name": "Leucocyanidin",
+        "smiles": "C1C(C(OC2=C1C(=CC(=C2)O)O)C3=CC(=C(C=C3)O)O)O",
+        "description": "Proanthocyanidin with potential anticancer effects through oxidative stress modulation."
+      }
+    ]
+  },
+  "camphor": {
+    "common_name": "Cinnamomum camphora",
+    "phytochemicals": [
+      {
+        "name": "Camphor",
+        "smiles": "CC1(C2CCC1(C(=O)C2)C)C",
+        "description": "Monoterpene ketone with potential anticancer activity through membrane perturbation and apoptosis induction."
+      },
+      {
+        "name": "1,8-Cineole",
+        "smiles": "CC1(C2CCC(O2)(CC1)C)C",
+        "description": "Monoterpene oxide with anti-inflammatory and potential anticancer activity through oxidative stress modulation."
+      },
+      {
+        "name": "Safrole",
+        "smiles": "C=CCC1=CC2=C(C=C1)OCO2",
+        "description": "Phenylpropene with potential anticancer effects, though requiring careful dosage consideration."
+      }
+    ]
+  },
+  "kamakasturi": {
+    "common_name": "Abelmoschus moschatus",
+    "phytochemicals": [
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Myricetin",
+        "smiles": "C1=C(C=C(C(=C1O)O)O)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O",
+        "description": "Flavonol with anticancer properties through multiple pathways including PI3K/Akt inhibition."
+      }
+    ]
+  },
+  "kepala": {
+    "common_name": "Streblus asper",
+    "phytochemicals": [
+      {
+        "name": "Asperoside",
+        "smiles": "COC1=C(C=C2C(=C1)C(=O)C(=C(O2)C3=CC(=C(C=C3)O)O)O)O",
+        "description": "Flavonoid glycoside with potential anticancer activity through antioxidant and anti-inflammatory mechanisms."
+      },
+      {
+        "name": "Quercetin",
+        "smiles": "C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O",
+        "description": "Flavonoid with strong anticancer activity through EGFR inhibition, apoptosis induction, and anti-angiogenic effects."
+      },
+      {
+        "name": "Kaempferol",
+        "smiles": "C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O",
+        "description": "Flavonol with EGFR inhibitory activity and anticancer effects through apoptosis induction and cell cycle arrest."
+      }
+    ]
+  }
+}
