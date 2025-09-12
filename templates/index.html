@@ -132,6 +132,55 @@
             100% { transform: rotate(360deg); }
         }
 
+        .loading-spinner-small {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #28a745;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .description-loading {
+            padding: 8px;
+            background-color: #e8f5e8;
+            border-radius: 6px;
+            border: 1px solid #c3e6cb;
+            font-size: 0.9em;
+            color: #155724;
+            display: flex;
+            align-items: center;
+        }
+
+        .ai-description-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .ai-description-btn:hover {
+            background: linear-gradient(45deg, #20c997, #28a745);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .ai-description-btn:active {
+            transform: translateY(0);
+        }
+
+        .description-content {
+            line-height: 1.5;
+            text-align: justify;
+        }
+
         .results {
             display: none;
             padding: 40px;
@@ -492,7 +541,7 @@
             createModelChart(result.model_results);
 
             // Display compounds
-            displayCompounds(compounds);
+            displayCompounds(compounds, result.prediction);
 
             results.style.display = 'block';
             results.scrollIntoView({ behavior: 'smooth' });
@@ -634,7 +683,7 @@
             }
         }
 
-        function displayCompounds(compounds) {
+        function displayCompounds(compounds, plantName = 'Unknown Plant') {
             const compoundsSection = document.getElementById('compoundsSection');
             
             if (compounds.length === 0) {
@@ -654,6 +703,7 @@
 
             compounds.forEach((compound, index) => {
                 const viewerId = `molviewer_${index}`;
+                const i = index; // Use index for element IDs
                 
                 html += `
                     <div class="compound-card">
@@ -687,8 +737,28 @@
                                     <button id="spin_${viewerId}" class="control-btn btn-spin" onclick="toggleSpin('${viewerId}')">Spin</button>
                                 </div>
                     `;
+                } else if (compound.smiles) {
+                    html += `
+                                <div class="no-3d-structure">
+                                    <p style='text-align: center; color: #e74c3c; margin: 20px;'>
+                                        ⚠️ 3D structure generation failed for this complex molecule
+                                    </p>
+                                    <div style='background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;'>
+                                        <p style='margin: 0; color: #856404;'><strong>SMILES Available:</strong> ${compound.smiles}</p>
+                                        <p style='margin: 5px 0 0 0; font-size: 12px; color: #6c757d;'>
+                                            This molecule has a complex structure that couldn't be converted to 3D coordinates automatically.
+                                        </p>
+                                    </div>
+                                </div>
+                    `;
                 } else {
-                    html += `<p style='text-align: center; color: #666;'>No SMILES data available for 3D visualization</p>`;
+                    html += `
+                                <div class="no-smiles-data">
+                                    <p style='text-align: center; color: #6c757d; margin: 20px;'>
+                                        📝 No molecular structure data available
+                                    </p>
+                                </div>
+                    `;
                 }
 
                 html += `
@@ -700,9 +770,14 @@
                                 <strong style='color: #495057;'>SMILES:</strong> 
                                 <code class="smiles-code">${compound.smiles || 'Not available'}</code>
                             </div>
-                            <div>
-                                <strong style='color: #495057;'>Description:</strong> 
-                                <span style='color: #6c757d;'>${compound.description}</span>
+                            <div style='margin-bottom: 15px;'>
+                                <strong style='color: #495057;'>Description:</strong>
+                                <div id="description-loading-${i}" class="description-loading" style="display: block;">
+                                    <div class="loading-spinner-small"></div>
+                                    <span>🧠 Loading AI-powered description...</span>
+                                </div>
+                                <div id="description-content-${i}" class="description-content" style='color: #6c757d; margin-top: 8px; display: none;'>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -711,8 +786,11 @@
 
             compoundsSection.innerHTML = html;
 
-            // Initialize 3D viewers
-            setTimeout(() => initializeViewers(compounds), 100);
+            // Initialize 3D viewers and load AI descriptions
+            setTimeout(() => {
+                initializeViewers(compounds);
+                loadAllAIDescriptions(compounds, plantName);
+            }, 100);
         }
 
         function initializeViewers(compounds) {
@@ -811,6 +889,129 @@
                 }
             } else {
                 console.error('Viewer not found:', viewerId);
+            }
+        }
+
+        async function loadAllAIDescriptions(compounds, plantName) {
+            // Load AI descriptions for all compounds automatically
+            for (let i = 0; i < compounds.length; i++) {
+                const compound = compounds[i];
+                console.log(`Loading AI description for compound ${i}: ${compound.name}`);
+                await loadAIDescriptionAuto(i, compound.name, compound.smiles, plantName);
+                // Add a longer delay between requests to avoid API rate limits
+                if (i < compounds.length - 1) {
+                    console.log(`Waiting 2 seconds before next request...`);
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+            }
+            console.log('All AI descriptions loaded');
+        }
+
+        async function loadAIDescriptionAuto(compoundIndex, compoundName, smiles, plantName) {
+            console.log('Loading AI description for compound index:', compoundIndex);
+            
+            const loadingElement = document.getElementById(`description-loading-${compoundIndex}`);
+            const contentElement = document.getElementById(`description-content-${compoundIndex}`);
+            
+            console.log('Elements found:', {
+                loading: !!loadingElement,
+                content: !!contentElement,
+                loadingId: `description-loading-${compoundIndex}`,
+                contentId: `description-content-${compoundIndex}`
+            });
+            
+            // Check if elements exist
+            if (!loadingElement || !contentElement) {
+                console.error('Required elements not found for compound:', compoundIndex);
+                console.error('Available elements with description-content:', 
+                    Array.from(document.querySelectorAll('[id*="description-content"]')).map(el => el.id));
+                return;
+            }
+            
+            try {
+                const response = await fetch('/get_ai_description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        compound_name: compoundName,
+                        smiles: smiles,
+                        plant_name: plantName
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Update description with AI-generated content
+                    contentElement.textContent = data.description;
+                    contentElement.style.display = 'block';
+                    loadingElement.style.display = 'none';
+                } else {
+                    throw new Error(data.error || 'Failed to generate description');
+                }
+            } catch (error) {
+                console.error('Error loading AI description:', error);
+                contentElement.innerHTML = `<span style="color: #dc3545;">Could not generate AI description: ${error.message}</span>`;
+                contentElement.style.display = 'block';
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        async function loadAIDescription(compoundIndex, compoundName, smiles, plantName) {
+            const loadingElement = document.getElementById(`description-loading-${compoundIndex}`);
+            const contentElement = document.getElementById(`description-content-${compoundIndex}`);
+            const buttonElement = document.getElementById(`ai-btn-${compoundIndex}`);
+            
+            // Check if elements exist
+            if (!loadingElement || !contentElement || !buttonElement) {
+                console.error('Required elements not found:', {
+                    loading: !!loadingElement,
+                    content: !!contentElement,
+                    button: !!buttonElement,
+                    compoundIndex: compoundIndex
+                });
+                alert('Error: Could not find required elements for AI description loading.');
+                return;
+            }
+            
+            // Show loading state
+            loadingElement.style.display = 'block';
+            buttonElement.disabled = true;
+            buttonElement.textContent = '🔄 Generating...';
+            
+            try {
+                const response = await fetch('/get_ai_description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        compound_name: compoundName,
+                        smiles: smiles,
+                        plant_name: plantName
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Update description with AI-generated content
+                    contentElement.textContent = data.description;
+                    buttonElement.textContent = '✅ AI Generated';
+                    buttonElement.style.background = 'linear-gradient(45deg, #6c757d, #5a6268)';
+                } else {
+                    throw new Error(data.error || 'Failed to generate description');
+                }
+            } catch (error) {
+                console.error('Error loading AI description:', error);
+                contentElement.innerHTML = `<span style="color: #dc3545;">Error generating AI description: ${error.message}</span>`;
+                buttonElement.textContent = '❌ Error - Retry';
+                buttonElement.disabled = false;
+            } finally {
+                // Hide loading state
+                loadingElement.style.display = 'none';
             }
         }
 
