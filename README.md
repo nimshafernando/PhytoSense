@@ -53,7 +53,3 @@ Final implementation will expand to include **QSAR modeling** and **explainabili
 ---
 
 
-
----
-
-Would you like me to also prepare a **ready-to-use `requirements.txt`** file based on your Colab code (Torch,
