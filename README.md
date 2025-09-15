@@ -22,7 +22,7 @@ Final implementation will expand to include **QSAR modeling** and **explainabili
 - **Medicinal Leaf Classification**  
   - Ensemble of ResNet-50, MobileNetV2, EfficientNet-B0  
   - Advanced augmentation (Albumentations), MixUp & CutMix regularization  
-  - Ensemble accuracy > 95%  
+  - Ensemble accuracy > 82%  
 
 - **Phytochemical Retrieval**  
   - Linked to ChEMBL, PubChem, and IMPPAT  
@@ -38,7 +38,7 @@ Final implementation will expand to include **QSAR modeling** and **explainabili
   - Rejects non-medicinal or irrelevant images  
 
 - **Explainability (Planned)**  
-  - Gemini / GPT-4 integration to interpret QSAR results in natural language  
+  - Gemini 1.5 Flash integration to interpret QSAR results in natural language  
 
 ---
 
